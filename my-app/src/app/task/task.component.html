@@ -1,0 +1,31 @@
+<div>
+    <h2 style="font-weight: bold;" >Nueva Tarea</h2>
+    <form (ngSubmit)="addTask()">
+    <p>   
+      Descripción: <input type="string"  formControlName= "description" />*
+      <ng-container
+        *ngIf="!formControls.description.valid && formControls.description.touched">
+        <p *ngIf="formControls.description.errors?.['required']">
+          Introduce la descripción.
+        </p>
+      </ng-container>
+    </p>
+    <p>
+      Status: <select formControlName="status">
+        <option value="progress" >In progress</option>
+        <option value="finished" >Finished</option>
+        <option value="pending" >Pending</option>
+      </select>*
+      <ng-container
+        *ngIf="!formControls.status.valid &&formControls.status.touched">
+        <p *ngIf="formControls.status.errors?.['required']">
+         Selecciona una estado.
+        </p>
+      </ng-container>
+    </p>
+      <p>
+        <input type="submit" value="Añadir" [disabled]="taskForm.invalid" />
+        <input type="submit" value="Atrás" (click) = "goBack()" />
+      </p>
+    </form>
+  </div>

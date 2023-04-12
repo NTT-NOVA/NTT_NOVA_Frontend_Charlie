@@ -11,20 +11,20 @@
       </ng-container>
     </p>
     <p>
-      Status: <select formControlName="status">
-        <option value="progress" >In progress</option>
-        <option value="finished" >Finished</option>
-        <option value="pending" >Pending</option>
+      state: <select formControlName="state">
+        <option value=1 >In progress</option>
+        <option value=2 >Finished</option>
+        <option value=0 >Pending</option>
       </select>*
       <ng-container
-        *ngIf="!formControls.status.valid &&formControls.status.touched">
-        <p *ngIf="formControls.status.errors?.['required']">
+        *ngIf="!formControls.state.valid &&formControls.state.touched">
+        <p *ngIf="formControls.state.errors?.['required']">
          Selecciona una estado.
         </p>
       </ng-container>
     </p>
       <p>
-        <input type="submit" value="Añadir" [disabled]="taskForm.invalid" />
+        <input type="submit" value="Añadir"/>
         <input type="submit" value="Atrás" (click) = "goBack()" />
       </p>
     </form>

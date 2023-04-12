@@ -9,17 +9,18 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
 
-  tasks: Tasks[] = [];
-  id:any;
+  tasks: Tasks[];
 
-  constructor(private taskService: TaskService, private router: Router) { }
+  constructor(private taskService: TaskService, private router: Router) {
+    this.tasks= [];
+   }
   ngOnInit(): void {
     this.taskService.getAll().subscribe( data =>{
       this.tasks = data;
     })
   }
 
-  delete(id: any){
+  delete(id: number){
     this.taskService.deleteTask(id).subscribe(async data =>{
       window.location.reload();
     })

@@ -11,7 +11,7 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Tasks[]>{
+  getAll(): Observable<any[]>{
     return this.http.get<Tasks[]>(environment.API);
   }
 
@@ -20,6 +20,6 @@ export class TaskService {
   }
 
   deleteTask(id: any): Observable<any>{
-    return this.http.delete(environment.API + "/"+id);
+    return this.http.delete(environment.API +id);
   }
 }

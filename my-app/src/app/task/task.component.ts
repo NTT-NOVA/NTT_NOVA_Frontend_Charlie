@@ -12,7 +12,7 @@ export class TaskComponent implements OnInit {
 
   taskForm = this.formBuilder.group({
     description: ['', [Validators.required, Validators.nullValidator]],
-    status: ['', [Validators.required, Validators.nullValidator]]
+    state: ['', [Validators.required, Validators.nullValidator]]
   });
 
   constructor(private formBuilder: FormBuilder, private taskService: TaskService, private router: Router) { }
@@ -28,11 +28,11 @@ export class TaskComponent implements OnInit {
       return;
     }
     const description = this.taskForm.value.description;
-    const status = this.taskForm.value.status;
+    const state = this.taskForm.value.state;
     
     const task: any = {
       'description': description, 
-      'status': status
+      'state': state
     };
 
   this.taskService.addTask(task).subscribe(async data =>{

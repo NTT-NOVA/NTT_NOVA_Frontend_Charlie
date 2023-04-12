@@ -2,14 +2,14 @@
     <table class="table table-striped">
       <thead >
         <tr>
-          <th>Status</th>
+          <th>State</th>
           <th>Description</th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let task of tasks">
-          <td>{{task.status}}</td>
+          <td>{{task.state}}</td>
           <td>{{task.description}}</td>
           <td>
             <button class="btn btn-secondary btn-sm" (click) = "delete(task.id)">

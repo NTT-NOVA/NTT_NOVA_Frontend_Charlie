@@ -8,6 +8,7 @@ import { TaskService } from './../services/task.service';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
+
 export class TaskComponent implements OnInit {
 
   taskForm = this.formBuilder.group({

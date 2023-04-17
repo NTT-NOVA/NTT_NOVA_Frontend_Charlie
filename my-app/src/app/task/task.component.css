@@ -1,16 +1,17 @@
+
 .NewTask {
     max-width: 600px;
     margin: 30px auto;
     font-family: arial, sans-serif;
-    border: 1px solid grey;
+    border: 10px solid rgba(41, 25, 219, 0.258);
     padding: 20px;
     border-radius: 5px;
-    color: rgba(2, 10, 54, 0.911);
-    background: rgba(171, 188, 207, 0.548);
+    background: rgba(0, 0, 255, 0.276);
 }
 
-.NewTask h2 {
+.h2-newtask {
     font-size: 36px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     font-weight: 100;
     margin: 20px auto;
@@ -58,5 +59,27 @@
 
 .NewTask .textarea {
     width: 500px;
+}
+
+.add-back-btns {
+    display:flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+button {
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.441);
+    border-radius: 100vmax;
+    font-weight: 600;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
+    transition: .2s; 
+    border: 0;
+    padding: 0.5rem 1.5rem;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
 }
 

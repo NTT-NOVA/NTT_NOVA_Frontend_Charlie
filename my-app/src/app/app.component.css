@@ -1,37 +1,36 @@
+header {
+    background-color: rgba(171, 171, 171, 0.342);
+}
+
+body {
+    background-color: rgba(171, 171, 171, 0.342);
+}
+
 input {
     background-color: transparent;
 }
-body {
-    background-color: rgba(137, 141, 255, 0.186);
-}
 
 .navbar {
-    background-color: rgba(137, 141, 255, 0.186);
     display: flex;
+}
+
+.home-newtask-btns {
+    display: flex;
+    gap: 1rem;
 }
 
 button {
     cursor: pointer;
     background-color: rgba(0, 0, 255, 0.441);
-    padding:  0.5rem;
     border-radius: 100vmax;
     font-weight: 600;
     box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
     transition: .2s; 
     border: 0;    
+    padding: 0.5rem 1rem;
 }
 
-.new_task {
-    margin-left: 15px;
-    
-}
-
-.home:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
-}
-
-.new_task:hover {
+button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
 }
@@ -48,7 +47,8 @@ h1 {
     align-items: center;
 }
 
-.title {
-    margin-left: 430px;
-    margin-bottom: 20px;
+.task-manager-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

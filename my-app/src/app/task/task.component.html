@@ -1,58 +1,35 @@
 <div class="NewTask">
-    <h2>Nueva Tarea</h2>
+    <h2 class="h2-newtask">New Task</h2>
     <form (ngSubmit)="addTask()">
 
-
     <div class="row mt-2 descriptionLine">
-      <div class="col-3">
-        <label>Descripción:</label> 
-      </div>   
-      <div class="col-6">
-        <textarea class="form-control" formControlName= "description" rows="3"></textarea>
+    	<div class="col-3">
+    </div>   
+    <div class="col-6">
+    	<textarea class="form-control" placeholder="Enter description" formControlName= "description" rows="3"></textarea>
         <ng-container
-          *ngIf="!formControls.description.valid && formControls.description.touched">
-          <p *ngIf="formControls.description.errors?.['required']">
-            Introduce la descripción.
-          </p>
+        	*ngIf="!formControls.description.valid && formControls.description.touched">
+        	<p *ngIf="formControls.description.errors?.['required']">Introduce la descripción.</p>
         </ng-container>
-      </div>
     </div>
+</div>
 
-<!--
-    <div class="row mt-2">
-      <div class="col-6">
-        <label>State:</label> 
-      </div>
-      <div class="col-6">
-        <ng-container
-          *ngIf="!formControls.state.valid &&formControls.state.touched">
-          <p *ngIf="formControls.state.errors?.['required']">
-          Selecciona un estado.
-          </p>
-        </ng-container>
-      </div>
-    </div>
-  -->
-
-    <div class="radiobtn">
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+<div class="radiobtn">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-secondary active">
           <input type="radio" name="options" id="option1" autocomplete="off" value=1 checked> In progress
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option2" value=2 autocomplete="off"> Finished
+        	<input type="radio" name="options" id="option2" value=2 autocomplete="off"> Finished
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="option3" value=0 autocomplete="off"> Pending
+        	<input type="radio" name="options" id="option3" value=0 autocomplete="off"> Pending
         </label>
-      </div>
     </div>
+</div>
     
+<div class="add-back-btns">
+    <button type="button" class="btnadd">Add</button>
+    <button type="button" class="btnback" (click) = "goBack()">Back</button>
+</div>
 
-    <div class="button-row">
-      <button type="button" class="btn btn-primary btn-add">Añadir</button>
-      <button type="button" class="btn btn-secondary btn-goBack" (click) = "goBack()">Atrás</button>
-    </div>
-
-    </form>
-  </div>

@@ -21,7 +21,7 @@ input {
 
 button {
     cursor: pointer;
-    background-color: rgba(111, 111, 118, 0.363);
+    background-color: rgba(77, 77, 77, 0.363);
     border-radius: 100vmax;
     font-weight: 600;
     transition: .2s; 

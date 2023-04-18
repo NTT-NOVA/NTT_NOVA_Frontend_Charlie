@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { TaskEditComponent } from './task-edit/task-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
-    HomeComponent
+    HomeComponent,
+    TaskEditComponent
   ],
   imports: [
     BrowserModule,

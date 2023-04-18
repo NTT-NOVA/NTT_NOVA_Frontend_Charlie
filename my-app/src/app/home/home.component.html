@@ -12,6 +12,9 @@
           <td>{{task.state}}</td>
           <td>{{task.description}}</td>
           <td>
+            <button class="edit-task" (click) = "edit(task.id)"></button>
+          </td>
+          <td>
             <button class="delete-task" (click) = "delete(task.id)"></button>
           </td>
         </tr>

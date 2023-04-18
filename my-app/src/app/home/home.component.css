@@ -1,0 +1,20 @@
+button {
+    cursor: pointer;
+    border-radius: 100vmax;
+    font-weight: 600;
+    transition: .2s; 
+    padding-top: 1.5rem;
+    padding-left: 2rem;;
+}
+
+.delete-task {
+    background-image: url("/assets/images/trash.png");
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 8px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}

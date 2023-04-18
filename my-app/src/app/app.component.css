@@ -1,9 +1,9 @@
 header {
-    background-color: rgba(171, 171, 171, 0.342);
+    background-color: white;
 }
 
 body {
-    background-color: rgba(171, 171, 171, 0.342);
+    background-color: white;
 }
 
 input {
@@ -21,10 +21,9 @@ input {
 
 button {
     cursor: pointer;
-    background-color: rgba(0, 0, 255, 0.441);
+    background-color: rgba(111, 111, 118, 0.363);
     border-radius: 100vmax;
     font-weight: 600;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
     transition: .2s; 
     border: 0;    
     padding: 0.5rem 1rem;

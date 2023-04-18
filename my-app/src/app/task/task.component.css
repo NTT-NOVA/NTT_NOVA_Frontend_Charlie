@@ -19,66 +19,49 @@
     line-height: 36px;
 }
 
-.NewTask .btn-add {
+.add-back-btns {
+    display:flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-add {
     border-radius: 5px;
     border-color: white !important;
     margin: 5px;
     padding: 5px 40px;
 }
 
-.NewTask .btn-goBack {
+.btn-goBack {
     border-radius: 5px;
     background: rgba(145, 146, 145, 0.288);
     border-color: white !important;
     padding: 5px 40px;
 }
 
-.NewTask .btn-goBack:hover {
+.btn-goBack:hover {
     border-radius: 5px;
     background: rgba(91, 91, 91, 0.288);
     border-color: white !important;
 }
 
-.NewTask .radiobtn {
+.radiobtn {
     text-align:center;
     margin: 10px auto;
 }
 
-.NewTask .mat-button-toggle-appearance-standard {
+.mat-button-toggle-appearance-standard {
     border-radius: 5px;
     border-color: white !important;
 }
     
-.NewTask .mat-button-toggle-appearance-standard:hover {
+.mat-button-toggle-appearance-standard:hover {
     border-radius: 5px;
     border-color: white !important;
     background: rgba(125, 124, 124, 0.288);
 }
 
-.NewTask .mat-button-toggle-checked {
+.mat-button-toggle-checked {
     background: rgba(91, 91, 91, 0.288);
 }
 
-.add-back-btns {
-    display:flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-/*
-button {
-    cursor: pointer;
-    background-color: rgba(118, 118, 118, 0.653);
-    border-radius: 100vmax;
-    font-weight: 600;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, .25);
-    transition: .2s; 
-    border: 0;
-    padding: 0.5rem 1.5rem;
-}
-
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
-}
-
-*/

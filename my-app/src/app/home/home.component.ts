@@ -26,4 +26,8 @@ export class HomeComponent implements OnInit{
     })
   }
 
+  edit(id: number){
+    this.router.navigate(['edit/' + id]);
+  }
+
 }

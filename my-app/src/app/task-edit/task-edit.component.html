@@ -1,6 +1,6 @@
 <div class="NewTask">
     <h2 class="h2-newtask">New Task</h2>
-    <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <form [formGroup]="modificadoTaskForm" (ngSubmit)="modifyTask()">
         <div class="form-group">
           <label for="">Enter task description: </label>
           <textarea type="text" name="description" [class.is-invalid]="f['description'].invalid && f['description'].touched"
@@ -26,7 +26,7 @@
     </div>
     
 <div class="add-back-btns">
-    <button type="submit" [class.disabled]="taskForm.invalid" value="Submit"  class="btn btn-primary">Add</button>
+    <button type="submit" [class.disabled]="modificadoTaskForm.invalid" value="Submit"  class="btn btn-primary">Add</button>
     <button type="button"  class="btn btn-secondary" (click) = "goBack()">Back</button>
 </div>
     </form>

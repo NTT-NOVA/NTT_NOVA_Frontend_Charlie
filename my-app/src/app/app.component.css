@@ -1,0 +1,53 @@
+header {
+    background-color: white;
+}
+
+body {
+    background-color: white;
+}
+
+input {
+    background-color: transparent;
+}
+
+.navbar {
+    display: flex;
+}
+
+.home-newtask-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    cursor: pointer;
+    background-color: rgba(77, 77, 77, 0.363);
+    border-radius: 100vmax;
+    font-weight: 600;
+    transition: .2s; 
+    border: 0;    
+    padding: 0.5rem 1rem;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+h1 {
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Administrador {
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.task-manager-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

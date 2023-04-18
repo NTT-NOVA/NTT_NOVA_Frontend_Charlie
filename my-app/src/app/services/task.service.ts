@@ -15,6 +15,14 @@ export class TaskService {
     return this.http.get<Tasks[]>(environment.API);
   }
 
+  getTaskById(id:number): Observable<any>{
+    return this.http.get<Tasks>(environment.API+id);
+  }
+
+  modifyTask(updatedTask: Tasks, id: number): Observable<any>{
+    return this.http.put(environment.API+ id, updatedTask);
+  }
+
   addTask(newTask: Tasks): Observable<any>{
     return this.http.post(environment.API, newTask);
   }

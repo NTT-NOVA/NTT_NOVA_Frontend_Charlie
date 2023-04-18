@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskService } from '../services/task.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-task-edit',
@@ -11,32 +12,42 @@ import { TaskService } from '../services/task.service';
 
 export class TaskEditComponent implements OnInit{
 
-  taskForm = this.formBuilder.group({
-    description: ['', [Validators.required, Validators.nullValidator]],
-    state: ['', [Validators.required, Validators.nullValidator]]
-  });
+  id:any;
+  state:any;
+  modificadoTaskForm!: FormGroup;
+  resultado:any;
+	constructor(private formBuilder: FormBuilder, private taskService: TaskService, private route: ActivatedRoute,private router: Router) { }
 
-	constructor(private formBuilder: FormBuilder, private taskService: TaskService, private router: Router) { }
+  ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.taskService.getTaskById(this.id).subscribe(data =>{
+      this.resultado = data;
+      this.state=this.resultado.state
+      this.modificadoTaskForm = new FormGroup({
 
-  ngOnInit() {}
-
-  get formControls(){
-    return this.taskForm.controls;
+      description: new FormControl(this.resultado.description, [Validators.required, Validators.maxLength(256)]),
+      state: new FormControl(this.resultado.state, [Validators.required])
+    });
+    })
   }
 
-  addTask(): void{
-    if(this.taskForm.invalid){
+  get f() {
+    return this.modificadoTaskForm.controls;
+  }
+
+  modifyTask(): void{
+    if(this.modificadoTaskForm.invalid){
       return;
     }
-    const description = this.taskForm.value.description;
-    const state = this.taskForm.value.state;
+    const description = this.modificadoTaskForm.value.description;
+    const state = this.modificadoTaskForm.value.state;
     
     const task: any = {
       'description': description, 
       'state': state
     };
 
-  this.taskService.addTask(task).subscribe(async data =>{
+  this.taskService.modifyTask(task,this.id).subscribe(async data =>{
     this.router.navigateByUrl('/home');
   })
   }

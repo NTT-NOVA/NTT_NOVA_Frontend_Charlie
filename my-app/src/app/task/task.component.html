@@ -15,17 +15,12 @@
 </div>
 
 <div class="radiobtn">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="radio" name="options" id="option1" autocomplete="off" value=1 checked> In progress
-        </label>
-        <label class="btn btn-secondary">
-        	<input type="radio" name="options" id="option2" value=2 autocomplete="off"> Finished
-        </label>
-        <label class="btn btn-secondary">
-        	<input type="radio" name="options" id="option3" value=0 autocomplete="off"> Pending
-        </label>
-    </div>
+    <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="1" id="option1">In progress</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="2" id="option2">Finished</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="0" id="option3">Pending</mat-button-toggle>
+    </mat-button-toggle-group>
+    <br/>You have selected : {{ toggleBtn.value }}
 </div>
     
 <div class="add-back-btns">

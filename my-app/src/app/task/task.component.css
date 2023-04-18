@@ -39,26 +39,24 @@
     border-color: white !important;
 }
 
-.NewTask .button-row {
-    text-align:center;
-}
-
 .NewTask .radiobtn {
-    text-align:center;
-    margin: 20px auto;
-}
-
-.NewTask .descriptionLine {
     text-align:center;
     margin: 10px auto;
 }
 
-.NewTask .radio {
-    padding: 5px 50px;
+.NewTask .mat-button-toggle-appearance-standard {
+    border-radius: 5px;
+    border-color: white !important;
+}
+    
+.NewTask .mat-button-toggle-appearance-standard:hover {
+    border-radius: 5px;
+    border-color: white !important;
+    background: rgba(125, 124, 124, 0.288);
 }
 
-.NewTask .textarea {
-    width: 500px;
+.NewTask .mat-button-toggle-checked {
+    background: rgba(91, 91, 91, 0.288);
 }
 
 .add-back-btns {

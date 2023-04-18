@@ -1,0 +1,29 @@
+<div class="NewTask">
+    <form (ngSubmit)="addTask()">
+
+    <div class="row mt-2 descriptionLine">
+    	<div class="col-3">
+    </div>   
+    <div class="col-6">
+    	<textarea class="form-control" placeholder="Enter description" formControlName= "description" rows="3"></textarea>
+        <ng-container
+        	*ngIf="!formControls.description.valid && formControls.description.touched">
+        	<p *ngIf="formControls.description.errors?.['required']">Introduce la descripción.</p>
+        </ng-container>
+    </div>
+</div>
+
+<div class="radiobtn">
+    <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="1" id="option1">In progress</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="2" id="option2">Finished</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="0" id="option3">Pending</mat-button-toggle>
+    </mat-button-toggle-group>
+    <br/>You have selected : {{ toggleBtn.value }}
+</div>
+    
+<div class="save-cancel-btns">
+    <button type="button" class="btn-save">Save</button>
+    <button type="button" class="btn-cancel" (click) = "goBack()">Cancel</button>
+</div>
+

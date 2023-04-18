@@ -1,18 +1,19 @@
 <div class="NewTask">
     <h2 class="h2-newtask">New Task</h2>
-    <form (ngSubmit)="addTask()">
-
-    <div class="row mt-2 descriptionLine">
-    	<div class="col-3">
-    </div>   
-    <div class="col-6">
-    	<textarea class="form-control" placeholder="Enter description" formControlName= "description" rows="3"></textarea>
-        <ng-container
-        	*ngIf="!formControls.description.valid && formControls.description.touched">
-        	<p *ngIf="formControls.description.errors?.['required']">Introduce la descripción.</p>
-        </ng-container>
-    </div>
-</div>
+    <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <div class="form-group">
+          <label for="">Enter Name: </label>
+          <textarea type="text" name="description" [class.is-invalid]="f['description'].invalid && f['description'].touched"
+            class="form-control" formControlName="description"></textarea>
+        </div>
+        <div class="alert alert-danger" *ngIf="f['description'].invalid && f['description'].touched">
+          <div *ngIf="f['description'].errors && f['description'].errors['required']">
+            Introduce la descripción
+          </div>
+          <div *ngIf="f['description'].errors && f['description'].errors['maxlength']">
+            256 caracteres máximo
+          </div>
+        </div>
 
 <div class="radiobtn">
     <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
@@ -24,7 +25,9 @@
 </div>
     
 <div class="add-back-btns">
-    <button type="button" class="btnadd">Add</button>
-    <button type="button" class="btnback" (click) = "goBack()">Back</button>
+    <button type="submit" [class.disabled]="taskForm.invalid" value="Submit" class="btn btn-primary">Add</button>
+    <button type="button"  class="btn btn-secondary" (click) = "goBack()">Back</button>
+</div>
+    </form>
 </div>
 

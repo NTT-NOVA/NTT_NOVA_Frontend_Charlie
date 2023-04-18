@@ -14,18 +14,19 @@
             256 caracteres máximo
           </div>
         </div>
-
-<div class="radiobtn">
-    <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
-    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="2" id="option1">In progress</mat-button-toggle>
-    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="3" id="option2">Finished</mat-button-toggle>
-    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="1" id="option3">Pending</mat-button-toggle>
+    <div class="form-check">
+    <div class="radiobtn">
+    <label for="">Enter status: </label>
+    <mat-button-toggle-group formControlName="state" name="state" #toggleBtn="matButtonToggleGroup">
+    <mat-button-toggle  class="mat-button-toggle-appearance-standard" value="2" id="option1">In progress</mat-button-toggle>
+    <mat-button-toggle   class="mat-button-toggle-appearance-standard" value="3" id="option2">Finished</mat-button-toggle>
+    <mat-button-toggle   class="mat-button-toggle-appearance-standard" value="1" id="option3">Pending</mat-button-toggle>
     </mat-button-toggle-group>
-    <br/>You have selected : {{ toggleBtn.value }}
-</div>
+    </div>
+    </div>
     
 <div class="add-back-btns">
-    <button type="submit" [class.disabled]="taskForm.invalid" value="Submit" class="btn btn-primary">Add</button>
+    <button type="submit" [class.disabled]="taskForm.invalid" value="Submit"  class="btn btn-primary">Add</button>
     <button type="button"  class="btn btn-secondary" (click) = "goBack()">Back</button>
 </div>
     </form>

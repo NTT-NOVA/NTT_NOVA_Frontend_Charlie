@@ -1,5 +1,5 @@
 export interface Tasks {
     id: any;
     description: string;
-    state: any;
+    state: number;
 };

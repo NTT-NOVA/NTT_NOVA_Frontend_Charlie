@@ -11,19 +11,19 @@ import { TaskService } from './../services/task.service';
 
 export class TaskComponent implements OnInit {
 
-  taskForm = new FormGroup({
-
-    description: new FormControl('', [Validators.required, Validators.maxLength(256)]),
-    state: new FormControl('', [Validators.required])
-  });
+  taskForm!: FormGroup;
   constructor(private taskService: TaskService, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.taskForm = new FormGroup({
 
-  addTask(): void{
-    if(this.taskForm.invalid){
-      return;
-    }
+      description: new FormControl('', [Validators.required, Validators.maxLength(256)]),
+      state: new FormControl('', [Validators.required])
+    });
+  }
+
+  addTask(){
+    console.log(this.taskForm.value)
     const description = this.taskForm.value.description;
     const state = this.taskForm.value.state;
     

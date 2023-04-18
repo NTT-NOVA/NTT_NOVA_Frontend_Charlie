@@ -2,7 +2,7 @@
     <h2 class="h2-newtask">New Task</h2>
     <form [formGroup]="taskForm" (ngSubmit)="addTask()">
         <div class="form-group">
-          <label for="">Enter Name: </label>
+          <label for="">Enter task description: </label>
           <textarea type="text" name="description" [class.is-invalid]="f['description'].invalid && f['description'].touched"
             class="form-control" formControlName="description"></textarea>
         </div>
@@ -17,9 +17,9 @@
 
 <div class="radiobtn">
     <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
-    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="1" id="option1">In progress</mat-button-toggle>
-    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="2" id="option2">Finished</mat-button-toggle>
-    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="0" id="option3">Pending</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="2" id="option1">In progress</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="3" id="option2">Finished</mat-button-toggle>
+    <mat-button-toggle class="mat-button-toggle-appearance-standard" value="1" id="option3">Pending</mat-button-toggle>
     </mat-button-toggle-group>
     <br/>You have selected : {{ toggleBtn.value }}
 </div>

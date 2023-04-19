@@ -25,3 +25,8 @@ button:hover {
     background-repeat: no-repeat;
     background-position: 8px;
 }
+
+.table {
+    max-width: 700px !important;
+    margin: 10px auto;
+}

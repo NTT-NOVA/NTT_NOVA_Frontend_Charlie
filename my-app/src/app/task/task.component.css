@@ -49,16 +49,15 @@
     text-align:center;
     margin: 10px auto;
 }
-
-.mat-button-toggle-appearance-standard {
-    border-radius: 5px;
-    border-color: white !important;
-}
     
 .mat-button-toggle-appearance-standard:hover {
     border-radius: 5px;
     border-color: white !important;
     background: rgba(125, 124, 124, 0.288);
+}
+
+:host .mat-button-toggle-group {
+    background: rgba(169, 168, 168, 0.288);
 }
 
 .mat-button-toggle-checked {

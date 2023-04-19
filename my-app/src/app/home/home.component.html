@@ -9,7 +9,9 @@
 
       <tbody>
         <tr *ngFor="let task of tasks">
-          <td>{{task.state}}</td>
+          <td *ngIf="task.state == 1">Pending</td>
+          <td *ngIf="task.state == 2">In progress</td>
+          <td *ngIf="task.state == 3">Finished</td>
           <td>{{task.description}}</td>
           <td>
             <button class="edit-task" (click) = "edit(task.id)"></button>

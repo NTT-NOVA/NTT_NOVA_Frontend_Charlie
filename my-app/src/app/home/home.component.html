@@ -1,9 +1,15 @@
 <div class="container">
+  <div class="filter-btns">
+    <button class="show-all" (click)="showAll()">Show all</button>
+    <button class="pending-col" (click)="filterTasks(1)">Pending</button>
+    <button class="in-progress-col" (click)="filterTasks(2)">In Progress</button>
+    <button class="finished-col" (click)="filterTasks(3)">Finished</button>
+  </div>
     <table class="table table-striped">
       <thead >
         <tr>
-          <th>State</th>
-          <th>Description</th>
+          <th class="state-col">State</th>
+          <th class="description-col">Description</th>
         </tr>
       </thead>
 

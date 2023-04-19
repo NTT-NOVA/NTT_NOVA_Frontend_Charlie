@@ -34,20 +34,63 @@ button:hover {
 
 td:first-child {
     max-width: 30px;
+    min-width: 30px;
 }
 
 td:nth-child(2) {
     max-width: 270px;
+    min-width: 270px;
+    word-break: break-word;
 }
 
 td:nth-child(3) {
     max-width: 25px;
+    min-width: 25px;
     margin-left: 5px;
     padding-left: 5px;
 }
 
 td:last-child {
     max-width: 30px;
+    min-width: 30px;
     margin-left: 5px;
     padding-left: 5px;
+}
+
+.show-all {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+
+.pending-col {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+
+.in-progress-col {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+
+.finished-col {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+.filter-btns {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 200px;
+    gap: 0.5rem;
 }

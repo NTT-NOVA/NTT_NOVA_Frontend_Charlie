@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
 
-  tasks: Tasks[];
+  tasks: Tasks[] = [];
+  filteredTasks: Tasks[] = [];
+	backupTasks: Tasks[] = [];
 
   constructor(private taskService: TaskService, private router: Router) {
     this.tasks= [];
@@ -17,6 +19,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.taskService.getAll().subscribe( data =>{
       this.tasks = data;
+			this.backupTasks = this.tasks;
     })
   }
 
@@ -26,4 +29,17 @@ export class HomeComponent implements OnInit{
     })
   }
 
+  edit(id: number){
+    this.router.navigate(['edit/' + id]);
+  }
+
+  filterTasks(state: number) {
+		this.filteredTasks = this.backupTasks.filter(tasks =>
+			tasks.state == state);
+		this.tasks = this.filteredTasks;
+  }
+
+	showAll() {
+		this.tasks = this.backupTasks;
+	}
 }

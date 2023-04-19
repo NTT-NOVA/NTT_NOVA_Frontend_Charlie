@@ -1,0 +1,96 @@
+button {
+    cursor: pointer;
+    border-radius: 100vmax;
+    font-weight: 600;
+    transition: .2s; 
+    padding-top: 1.5rem;
+    padding-left: 2rem;;
+}
+
+.delete-task {
+    background-image: url("/assets/images/trash.png");
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 8px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+}
+
+.edit-task {
+    background-image: url("/assets/images/pencil.png");
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: 8px;
+}
+
+.table {
+    max-width: 700px !important;
+    width: 100%;
+    margin: 10px auto;
+}
+
+td:first-child {
+    max-width: 30px;
+    min-width: 30px;
+}
+
+td:nth-child(2) {
+    max-width: 270px;
+    min-width: 270px;
+    word-break: break-word;
+}
+
+td:nth-child(3) {
+    max-width: 25px;
+    min-width: 25px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+td:last-child {
+    max-width: 30px;
+    min-width: 30px;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.show-all {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+
+.pending-col {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+
+.in-progress-col {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+
+.finished-col {
+    padding-top: 0px;
+    padding-left: 0px;
+    background-color: rgba(77, 77, 77, 0.363);
+    border: 0;
+    padding: 0.25rem 0.75rem;
+}
+.filter-btns {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 200px;
+    gap: 0.5rem;
+}

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskService } from './../services/task.service';
 
@@ -8,25 +8,22 @@ import { TaskService } from './../services/task.service';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
+
 export class TaskComponent implements OnInit {
 
-  taskForm = this.formBuilder.group({
-    description: ['', [Validators.required, Validators.nullValidator]],
-    state: ['', [Validators.required, Validators.nullValidator]]
-  });
+  taskForm!: FormGroup;
+  constructor(private taskService: TaskService, private router: Router) { }
 
-  constructor(private formBuilder: FormBuilder, private taskService: TaskService, private router: Router) { }
+  ngOnInit() {
+    this.taskForm = new FormGroup({
 
-  ngOnInit() {}
-
-  get formControls(){
-    return this.taskForm.controls;
+      description: new FormControl('', [Validators.required, Validators.maxLength(256)]),
+      state: new FormControl('1', [Validators.required])
+    });
   }
 
-  addTask(): void{
-    if(this.taskForm.invalid){
-      return;
-    }
+  addTask(){
+    console.log(this.taskForm.value)
     const description = this.taskForm.value.description;
     const state = this.taskForm.value.state;
     
@@ -42,5 +39,9 @@ export class TaskComponent implements OnInit {
 
   goBack(){
     this.router.navigateByUrl('/home');
+  }
+
+  get f() {
+    return this.taskForm.controls;
   }
 }

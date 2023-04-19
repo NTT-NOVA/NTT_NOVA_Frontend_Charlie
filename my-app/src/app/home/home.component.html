@@ -1,20 +1,29 @@
 <div class="container">
+  <div class="filter-btns">
+    <button class="show-all" (click)="showAll()">Show all</button>
+    <button class="pending-col" (click)="filterTasks(1)">Pending</button>
+    <button class="in-progress-col" (click)="filterTasks(2)">In Progress</button>
+    <button class="finished-col" (click)="filterTasks(3)">Finished</button>
+  </div>
     <table class="table table-striped">
       <thead >
         <tr>
-          <th>State</th>
-          <th>Description</th>
+          <th class="state-col">State</th>
+          <th class="description-col">Description</th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let task of tasks">
-          <td>{{task.state}}</td>
+          <td *ngIf="task.state == 1">Pending</td>
+          <td *ngIf="task.state == 2">In progress</td>
+          <td *ngIf="task.state == 3">Finished</td>
           <td>{{task.description}}</td>
           <td>
-            <button class="btn btn-secondary btn-sm" (click) = "delete(task.id)">
-              <i class="material-icons"> Delete </i>
-            </button>
+            <button class="edit-task" (click) = "edit(task.id)"></button>
+          </td>
+          <td>
+            <button class="delete-task" (click) = "delete(task.id)"></button>
           </td>
         </tr>
       </tbody>

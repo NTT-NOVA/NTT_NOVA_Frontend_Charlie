@@ -1,6 +1,6 @@
 <div class="NewTask">
     <h2 class="h2-newtask">New Task</h2>
-    <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <form [formGroup]="modificadoTaskForm" (ngSubmit)="modifyTask()">
         <div class="form-group">
           <label for="">Enter task description: </label>
           <textarea type="text" name="description" [class.is-invalid]="f['description'].invalid && f['description'].touched"
@@ -17,17 +17,17 @@
     <div class="form-check">
     <div class="radiobtn">
     <label for="">Enter status: </label>
-    <mat-button-toggle-group formControlName="state" name="state" #toggleBtn="matButtonToggleGroup">
-    <mat-button-toggle   class="mat-button-toggle-appearance-standard" value="1" id="option3">Pending</mat-button-toggle>
-    <mat-button-toggle  class="mat-button-toggle-appearance-standard" value="2" id="option1">In progress</mat-button-toggle>
-    <mat-button-toggle   class="mat-button-toggle-appearance-standard" value="3" id="option2">Finished</mat-button-toggle>
+    <mat-button-toggle-group [(ngModel)]="state" formControlName="state" name="state" #toggleBtn="matButtonToggleGroup">
+      <mat-button-toggle class="mat-button-toggle-appearance-standard" value="1" id="option3" [checked]="state === 1">Pending</mat-button-toggle>
+      <mat-button-toggle class="mat-button-toggle-appearance-standard" value="2" id="option1" [checked]="state === 2">In progress</mat-button-toggle>
+      <mat-button-toggle class="mat-button-toggle-appearance-standard" value="3" id="option2" [checked]="state === 3">Finished</mat-button-toggle>
     </mat-button-toggle-group>
     </div>
     </div>
     
-<div class="add-back-btns">
-    <button type="submit" [class.disabled]="taskForm.invalid" value="Submit"  class="btn btn-primary">Add</button>
-    <button type="button"  class="btn btn-secondary" (click) = "goBack()">Back</button>
+<div class="save-cancel-btns">
+    <button type="submit" [class.disabled]="modificadoTaskForm.invalid" value="Submit"  class="btn btn-primary">Save</button>
+    <button type="button"  class="btn btn-secondary" (click) = "goBack()">Cancel</button>
 </div>
     </form>
 </div>
